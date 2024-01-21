@@ -1,0 +1,23 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-filter {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
+.list-character {
+  display: inline-grid;
+  grid-column: 3;
+  grid-row: 6;
+  gap: 10px;
+}

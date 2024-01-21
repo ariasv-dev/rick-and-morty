@@ -1,0 +1,30 @@
+<div class="header-container">
+  <div class="background-image">
+    <img src="../assets/img/rick-and-morty-background.png" alt="" />
+  </div>
+  <div class="content-box">
+    <div class="title-img">
+      <a href="/">
+        <img
+          src="..\..\assets\img\rick-and-morty-text.svg"
+          alt="Rick and Morty title"
+        />
+      </a>
+    </div>
+    <div class="search-bar">
+      <app-search-bar
+        (searchTermResult)="handleSearchResult($event)"
+        (filtersApplied)="handleFilters($event)"
+      ></app-search-bar>
+    </div>
+    <div class="filter-applied">
+      <span class="filter-applied-text">Filtros aplicados: &#160; </span>
+      <ng-container
+        *ngFor="let item of filters; let last = last; let i = index"
+      >
+        <span>{{ item }}</span>
+        <span *ngIf="!last">, &#160;</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

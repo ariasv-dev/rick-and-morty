@@ -1,0 +1,119 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 314px;
+  height: 140px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  max-height: 140px;
+  margin: 15px;
+}
+
+.card-column-img {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 140px;
+}
+
+.card-img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+}
+
+.card-img-box img {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.fav-button {
+  border: none;
+  padding: 0.5em;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  margin: -40px;
+}
+
+.fav-button:hover .star {
+  color: gold;
+}
+
+.star.active {
+  color: gold;
+}
+
+.star {
+  font-size: 18px;
+  color: #828282;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-column-info {
+  display: flex;
+  flex-direction: column;
+  width: 174px;
+  padding: 10px 15px;
+}
+
+.p-badge.p-badge-success {
+  min-width: 0.4rem !important;
+  height: 0.4rem !important;
+  margin-right: 0.3rem !important;
+}
+
+.line1,
+.line3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  font-size: 10px;
+  color: #4f4f4f;
+}
+
+.line2 {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0.3em 0;
+}
+
+.line3 {
+  flex-direction: column;
+  align-items: start;
+}
+
+.line-label {
+  font-size: 10px;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+}
+
+.line-info {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0.2em 0;
+}
+
+.name-line {
+  font-size: 16;
+  font-weight: 400;
+}
+
+.line-info {
+  font-size: 12px;
+  font-weight: 300;
+}

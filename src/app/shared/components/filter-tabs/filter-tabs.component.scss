@@ -1,0 +1,15 @@
+.tabs-filter-container div {
+  width: 100%;
+  display: flex;
+}
+
+.ui-tabview-nav {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ui-tabview-nav .ui-tabview-nav-item {
+  flex: 1;
+  text-align: center;
+}

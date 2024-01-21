@@ -1,0 +1,92 @@
+<p-dialog
+  [(visible)]="isVisible"
+  [modal]="true"
+  [style]="{ width: '46.25em', height: '90vh' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+  <ng-template pTemplate="headless">
+    <div class="header">
+      <img src="../../../../assets/img/details-bg.png" alt="Rick and Morty" />
+
+      <div class="card-img-box">
+        <img src="{{ character.image }}" width="140px" height="139px" />
+        <button class="fav-button">
+          <div class="star">&#9733;</div>
+        </button>
+        <div class="text-box">
+          <span class="char-status">{{ character.status }}</span>
+          <span class="char-name">{{ character.name }}</span>
+          <span class="char-type">{{ character.type }}</span>
+        </div>
+      </div>
+    </div>
+    <section class="info-container">
+      <p class="section-title">Información</p>
+
+      <div class="info-cards">
+        <app-character-information
+          [cardTitle]="'Gender'"
+          [cardInfo]="character.gender"
+        ></app-character-information>
+        <app-character-information
+          [cardTitle]="'Origin'"
+          [cardInfo]="character.origin?.name"
+        ></app-character-information>
+        <app-character-information
+          [cardTitle]="'Type'"
+          [cardInfo]="character.type"
+        ></app-character-information>
+      </div>
+    </section>
+
+    <p-divider></p-divider>
+
+    <section class="episodes-container">
+      <p class="section-title">Episodios</p>
+
+      <div class="info-episodes">
+        <div *ngFor="let episode of episodesInfo | slice : 0 : 6">
+          <app-card-episodes
+            [name]="episode.name"
+            [episode]="episode.episode"
+            [date]="episode.air_date"
+          >
+          </app-card-episodes>
+        </div>
+      </div>
+    </section>
+
+    <p-divider></p-divider>
+
+    <section class="personajes-container">
+      <p class="section-title">Personajes Interesantes</p>
+
+      <div class="info-episodes">
+        <div *ngFor="let character of randomCharacters">
+          <app-card-character [character]="character"> </app-card-character>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p-button
+        icon="pi pi-times"
+        label="Salir"
+        (onClick)="isVisible = false"
+        pAutoFocus
+        [autofocus]="true"
+        [style]="{
+          background: 'red',
+          'margin-right': '1em',
+          border: 'none',
+          'border-radius': '50%'
+        }"
+      ></p-button>
+      <p-button
+        label="Compartir personaje"
+        pAutoFocus
+        [autofocus]="true"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-dialog>

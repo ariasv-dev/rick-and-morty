@@ -1,0 +1,51 @@
+.p-inputgroup {
+  height: 3.75em;
+  display: flex;
+  align-items: center;
+}
+
+.p-inputgroup:focus,
+.p-inputgroup:focus-visible .p-inputgroup input:focus,
+.p-inputgroup input:focus-visible {
+  border: none;
+}
+
+.p-inputgroup-addon,
+.p-inputgroup input,
+.p-inputgroup button {
+  background-color: #081f32;
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+}
+
+.p-inputgroup-addon {
+  border: 2px solid #ffffff;
+  border-right: none;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.p-inputgroup input {
+  width: 400px;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.p-inputgroup input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125em;
+  font-weight: 200;
+  color: #ffffff;
+}
+
+.p-inputgroup button {
+  border: 2px solid #ffffff;
+  border-left: none;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.icon-button {
+  padding: 0.5em 1em;
+}

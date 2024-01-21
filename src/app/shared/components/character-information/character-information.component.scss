@@ -1,0 +1,22 @@
+.p-card-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0.8em 0.5em;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 11px;
+  font-weight: 200;
+  color: #828282;
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  font-size: 17px;
+  font-weight: 500;
+  color: #081f32;
+}

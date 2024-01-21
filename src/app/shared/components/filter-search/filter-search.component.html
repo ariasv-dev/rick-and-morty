@@ -1,0 +1,53 @@
+<div class="filter-search-container">
+  <p-dialog
+    header="Filtros"
+    [(visible)]="isVisible"
+    [breakpoints]="{ '960px': '75vw' }"
+    [style]="{ width: '50vw' }"
+    [draggable]="false"
+    [resizable]="false"
+  >
+    <div class="filters">
+      <div class="status-filter">
+        <h3>Status</h3>
+        <div *ngFor="let status of statusList" class="field-checkbox">
+          <p-checkbox
+            [label]="status"
+            name="group"
+            [value]="status"
+            [(ngModel)]="selectedStatus"
+          ></p-checkbox>
+        </div>
+      </div>
+      <div class="species-filter">
+        <h3>Species</h3>
+        <div *ngFor="let specie of speciesList" class="field-checkbox">
+          <p-checkbox
+            [label]="specie"
+            name="group"
+            [value]="specie"
+            [(ngModel)]="selectedSpecies"
+          ></p-checkbox>
+        </div>
+      </div>
+      <div class="genre-filter">
+        <h3>Gender</h3>
+        <div *ngFor="let gender of genderList" class="field-checkbox">
+          <p-checkbox
+            [label]="gender"
+            name="group"
+            [value]="gender"
+            [(ngModel)]="selectedGender"
+          ></p-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <p-button
+        label="Filtrar"
+        [rounded]="true"
+        (onClick)="applyFilters()"
+      ></p-button>
+    </div>
+  </p-dialog>
+</div>

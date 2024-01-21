@@ -1,0 +1,71 @@
+<div class="list-container">
+  <div class="list-header">
+    <app-header (searchResult)="handleSearchResult($event)"></app-header>
+  </div>
+  <div class="gender-filter">
+    <app-filter-tabs
+      (selectedFilter)="handleGenderFilterChanged($event)"
+    ></app-filter-tabs>
+  </div>
+  <div class="fav-filter">
+    <app-filter-favorites
+      (filterByFav)="handleFavFilterChanged($event)"
+    ></app-filter-favorites>
+  </div>
+  <div class="cards-gallery">
+    <p-dataView
+      #dv
+      [value]="characters"
+      [rows]="20"
+      [paginator]="true"
+      [totalRecords]="totalRecords"
+      [rowsPerPageOptions]="[10, 20, 30]"
+      [showCurrentPageReport]="true"
+      [layout]="'grid'"
+    >
+      <ng-template
+        let-character
+        pTemplate="grid"
+        let-characters
+        *ngIf="!noResults"
+      >
+        <div class="grid grid-nogutter">
+          <div
+            class="grid-view"
+            *ngFor="let character of characters"
+            class="list-character"
+          >
+            <app-card-character
+              [character]="character"
+              (favoriteChanged)="handleFavoriteChanged($event)"
+              (showCharacterDetails)="handleShowDetails($event)"
+            >
+            </app-card-character>
+          </div>
+        </div>
+        <app-pop-up-details
+          [isVisible]="showDetails"
+          [character]="characterDetails"
+          [episodes]="characterEpisodes"
+          [randomCharacters]="randomCharacters"
+        ></app-pop-up-details>
+      </ng-template>
+    </p-dataView>
+    <ng-template *ngIf="noResults">
+      <div class="not-found-container">
+        <h2>Uh-oh!</h2>
+        <p>¡Pareces perdido en tu viaje!</p>
+        <div class="button">
+          <p-button
+            label="Continuar"
+            [rounded]="true"
+            (onClick)="deleteFilters()"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
+<div class="footer-container">
+  <app-footer></app-footer>
+</div>

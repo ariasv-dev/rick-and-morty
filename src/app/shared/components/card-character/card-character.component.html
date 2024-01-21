@@ -1,0 +1,31 @@
+<div class="card" (click)="showDetails(character)">
+  <div class="card-column-img">
+    <div class="card-img-box">
+      <img src="{{ character.image }}" width="140px" height="139px" />
+      <button class="fav-button" (click)="toggleFavorite(character)">
+        <div class="star" [class.active]="isFavorite">&#9733;</div>
+      </button>
+    </div>
+  </div>
+  <div class="card-column-info">
+    <div class="line1">
+      <p-badge severity="success" *ngIf="isAlive"></p-badge>
+      <p-badge severity="danger" *ngIf="!isAlive"></p-badge>
+
+      <span class="line1-label"
+        >{{ character.status }} - {{ character.species }}</span
+      >
+    </div>
+    <div class="line2">
+      <span class="name-line">{{ character.name }}</span>
+    </div>
+    <div class="line3">
+      <span class="line-label">Last known location:</span>
+      <span class="line-info"> {{ character.location?.name }}</span>
+    </div>
+    <div class="line4">
+      <span class="line-label">First seen in:</span>
+      <span class="line-info">{{ episodeName }}</span>
+    </div>
+  </div>
+</div>
