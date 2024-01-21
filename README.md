@@ -3,6 +3,9 @@ It's a simple project where you can check the 'Rick and Morty' characters, it ha
 
 This project was generated with Angular CLI version 17.1.0, Node: 20.11.0, Package Manager: npm 10.2.1. The library Primeng: ^17.3.2 was also used.
 
+## Installing the project
+After cloning or downloading the project, in the terminal, go to the folder 'rick-and-morty-main' and then run the command "npm install".
+
 ## Development server
 Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
